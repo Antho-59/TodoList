@@ -7,21 +7,26 @@ import java.util.List;
 
 public class TodoServiceImpl implements TodoService{
 
-
+private List<Todo> todoList = new ArrayList<>();
 
     @Override
     public List<Todo> getAll() {
-        return List.of();
+
+        return new ArrayList<>(todoList);
     }
 
     @Override
     public Todo getById(int id) {
+    for (Todo todo: todoList){
+        if (todo.getId() == id){
+            return todo;
+        }
+    }
         return null;
     }
 
     @Override
     public void add(String name, String description) {
-
     }
 
     @Override
@@ -31,7 +36,7 @@ public class TodoServiceImpl implements TodoService{
 
     @Override
     public void remove(int id) {
-
+    todoList.remove(id);
     }
 
     @Override
