@@ -27,6 +27,7 @@ private List<Todo> todoList = new ArrayList<>();
 
     @Override
     public void add(String name, String description) {
+        Todo todo = new Todo(name,description);
     }
 
     @Override
@@ -37,10 +38,11 @@ private List<Todo> todoList = new ArrayList<>();
     @Override
     public void remove(int id) {
     todoList.remove(id);
+
     }
 
     @Override
     public void toggleDone(int id) {
-
+todoList.set(toggleDone());
     }
 }
