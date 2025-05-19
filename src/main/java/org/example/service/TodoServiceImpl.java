@@ -28,6 +28,7 @@ private List<Todo> todoList = new ArrayList<>();
     @Override
     public void add(String name, String description) {
         Todo todo = new Todo(name,description);
+        todoList.add(todo);
     }
 
     @Override
