@@ -19,12 +19,14 @@ public class Todo {
         this.done = done;
     }
 
-    public Todo(String name, String description) {
-        this.id = id++;
+    public Todo(int id ,String name, String description) {
+        this.id = id;
         this.name = name;
         this.description = description;
-        this.done = false;
+
     }
+
+
 
     // getter / setter
 
@@ -58,5 +60,17 @@ public class Todo {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+
+    @Override
+    public String toString() {
+        String doneStr = done ? "FAIT" : "A faire";
+        return "Todo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", done=" + doneStr +
+                '}';
     }
 }
